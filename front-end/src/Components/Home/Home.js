@@ -1,8 +1,6 @@
 import React from 'react';
 import './Home.css';
 import Avatar from '@material-ui/core/Avatar';
-import SearchIcon from '@material-ui/icons/SearchOutlined';
-
 
 function Home() {
     return (
@@ -13,9 +11,10 @@ function Home() {
                     alt=""
                 />
             </div>
-            <div className="home__search">
-                <input className="home__searchText" type="text" placeholder="Enter Location" />
-                <SearchIcon className="home__searchIcon" />
+            <div className="home__services">
+                <h3>Buy</h3>
+                <h3>Rent</h3>
+                <h3>Mortgage</h3>
             </div>
             <div className="home__options">
                 <h4>Post a Property</h4>

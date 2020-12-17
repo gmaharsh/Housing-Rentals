@@ -1,51 +1,65 @@
 .home{
     display: flex;
-    padding: 20px;
-    justify-content: space-between;
-    z-index: 1;
+    flex-direction: column;
+    overflow-y: hidden;
 }
 
-.home__logo{
-    margin-left: 20px;
-    margin-top: 15px;
+.home__banner{
+    display: flex;
+    width: 100%;
 }
 
-.home__logo > img{
-    flex: 1;
-    width: 20vh;
+.home__banner > img{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    align-items: center;
 }
 
-.home__services{
+.home__search{
+    display: flex;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    /* text-align: center; */
+    height: 4vh;
+    min-width: 200px;
+    /* border: 1px solid; */
+    border-radius: 10px;
+    background:black;
+    opacity: 0.8;
+   
+}
+
+.home__searchInput > input{
+    cursor: pointer;
+   min-width: 400px;
+   height: 4vh;
+    border-radius: 10px;
+    background: transparent;
+    /* padding: ; */
+    border: none;
+    font-size: 20px;
+    margin-right: 10px;
+    color: white;
+}
+.home__searchInput>input:focus{
+    outline: none;
+    border: none;
+}
+.home__searchInput>input::placeholder{
+    color: white;
+    font-size: 18px;
+   
+}
+.home__searchIcon{
+    cursor: pointer;
+    color: white;
     display: flex;
     align-items: center;
-    margin-left: 20px;
-    margin-top: 15px;
-    justify-content: space-between;
-}
-
-.home__services > h3{
-    margin-right: 20px;
-    padding: 5px 20px;
-    cursor: pointer;
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
-}
-
-.home__services > h3:hover{
-    border: 1px solid #eeeeee;
-    border-radius: 20px;
-    background-color: deepskyblue;
-}
-
-.home__options{
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
-    margin-right: 20px;
-}
-
-.home__options > h4{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 600;
-    margin-right: 20px;
-    cursor: pointer;
+    justify-content: center;
+    margin-right: 10px;
 }

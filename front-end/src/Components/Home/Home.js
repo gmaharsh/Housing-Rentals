@@ -1,24 +1,33 @@
 import React from 'react';
 import './Home.css';
-import Avatar from '@material-ui/core/Avatar';
+import SearchIcon from '@material-ui/icons/SearchOutlined';
+import About from './About/About';
 
 function Home() {
     return (
         <div className="home">
-            <div className="home__logo">
+            <div className="home__banner">
                 <img
-                    src="http://uploads.webflow.com/57c6315d5410317a109bcf7b/57c6357c23bf505b1929160d_Offer1-color-logo.png"
+                    className="home__bannerImage"
+                    src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                     alt=""
                 />
+                <div className="home__search">
+                    <div className="home__searchInput">
+                        <input className="" type="text" placeholder="Search for you Neightbourhood or City?" />
+                    </div>
+                    <div className="home__searchIcon">
+                        <SearchIcon fontSize="medium" />
+                    </div>  
+                </div>
             </div>
-            <div className="home__services">
-                <h3>Buy</h3>
-                <h3>Rent</h3>
-                <h3>Mortgage</h3>
+            <div className="home__about">
+                <About />
             </div>
-            <div className="home__options">
-                <h4>Post a Property</h4>
-                <Avatar alt="Maharsh Hetal Gheewala" src="https://lh3.googleusercontent.com/ogw/ADGmqu8euMh8_2GTsY4OUVzSGnLlH9dmcpj9ctSBN4abUYY=s83-c-mo" />
+            <div className="home__suggestion">
+                <div className="home__suggestionTitle">
+
+                </div>
             </div>
         </div>
     )

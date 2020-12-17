@@ -1,7 +1,9 @@
+import { Button } from '@material-ui/core';
 import React from 'react';
 import './Card.css';
 
-function Card({ title, description}) {
+function Card({ title, description, button, email, contactNumber, address }) {
+    
     return (
         <div className="Card">
             <div className="card__title">
@@ -11,7 +13,10 @@ function Card({ title, description}) {
                 <p>{description}</p>
             </div>
             <div className="card__button">
-                <button>Find More</button>
+                {button ? (<button>Explore</button> ):  null}
+            </div>
+            <div className="card__contact">
+                <h1>{email}</h1>
             </div>
         </div>
     )

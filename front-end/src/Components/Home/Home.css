@@ -63,3 +63,48 @@
     justify-content: center;
     margin-right: 10px;
 }
+
+.home__suggestion{
+    margin-top: 30px;
+    background-color: mediumturquoise;
+}
+
+.home__suggestionTitle{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home__suggestionTitle > h3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    color :rgb(59, 65, 68);
+    margin: 20px 0;
+}
+
+.home__suggestionCards{
+    display: flex;
+    margin: 20px auto;
+    margin-bottom: 40px;
+}
+
+.home__testimonials ,.home__contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home__testimonialsTitle > h3 , .home__ContactTitle > h3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    color :rgb(59, 65, 68);
+    margin: 20px 0;
+}
+
+.home__testimonialsPeople{
+    display: flex;
+}
+
+.home__contact{
+    background: #eeeeee;
+    padding: 20px;
+}

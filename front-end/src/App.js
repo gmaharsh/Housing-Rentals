@@ -8,9 +8,12 @@ import { useEffect } from 'react';
 function App() {
 
   useEffect(() => {
-    axios.get('./homes.json')
+    axios.get('homes.json')
       .then((res) => {
         console.log(res)
+      })
+      .catch((error) => {
+        console.log("Error is:-", error)
       })
   },[])
   
@@ -19,6 +22,9 @@ function App() {
       <div className="App">
         <Header />
         <Switch>
+          <Route path="/property">
+            <h1>I am property route</h1>
+          </Route>
           <Route path="/">
             <Home />
           </Route>

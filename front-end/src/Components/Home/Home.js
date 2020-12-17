@@ -2,6 +2,8 @@ import React from 'react';
 import './Home.css';
 import SearchIcon from '@material-ui/icons/SearchOutlined';
 import About from './About/About';
+import Card from './Card/Card';
+import { Carousel } from 'react-responsive-carousel';
 
 function Home() {
     return (
@@ -26,7 +28,45 @@ function Home() {
             </div>
             <div className="home__suggestion">
                 <div className="home__suggestionTitle">
-
+                    <h3>Look at some of our properties</h3>
+                </div>
+                <div className="home__suggestionCards">
+                    <Card
+                        housetitle="Mortgage"
+                        image=""
+                        price=""
+                    />
+                    <Card
+                        housetitle="Mortgage"
+                        image=""
+                        price=""
+                    />
+                    <Card
+                        housetitle="Mortgage"
+                        image=""
+                        price=""
+                    />
+                </div>
+            </div>
+            <div className="home__testimonials">
+                <div className="home__testimonialsTitle">
+                    <h3>Testimonials</h3>
+                </div>
+                <div className="home__testimonialsPeople">
+                   
+                </div>
+            </div>
+            <div className="home__contact">
+                <div className="home__ContactTitle">
+                    <h3>Want to meet us?</h3>
+                </div>
+                <div className="home__ContactInfo">
+                    <Card
+                        emailId="steve@offer1.com"
+                        contactNumber={312 - 999 - 9999}
+                        address="9th Ave San Diego, CA 92101"
+                        button={false}
+                    />
                 </div>
             </div>
         </div>

@@ -5,6 +5,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
 import { actionTypes } from './reducer';
 import { auth, provider } from './firebase';
+import { GoogleLoginButton } from "react-social-login-buttons";
+
 
 
 function Auth() {

@@ -30,6 +30,10 @@
     border-radius: 10px;
 }
 
+.header__services:link{
+    text-decoration: none;
+    color: black;
+}
 
 .properties__filter_location > input{
     width: 20vh;

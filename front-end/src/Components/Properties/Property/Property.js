@@ -3,16 +3,18 @@ import { useLocation, useParams } from 'react-router-dom';
 import './Property.css';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import MailIcon from '@material-ui/icons/Mail';
-import { FacebookButton, FacebookCount } from "react-social";
+import { FacebookButton, FacebookCount, EmailButton } from "react-social";
+import { useStateValue } from '../../../StateProvider';
+import Auth from '../../../Auth';
 
 function Property() {
 
-    let url = "https://housing-rentals.web.app/property";
-
+    let url = "https://housing-rentals.web.app/"
     let location = useLocation();
     const urlLocation = location.pathname.split('/detailProperty/');
     const id = (urlLocation[1] - 1);
-    console.log(id)
+
+    const [{ user }, dispatch] = useStateValue();
 
     const [data, setData] = useState("");
     const [titleCompany, setTitleCompany] = useState("");
@@ -57,107 +59,123 @@ function Property() {
 
 
     return (
-        <div className="property">
-            <div className="propety__image">
-                <img
-                    src={property.primaryImageUrl}
-                    alt=""
-                />
-                <div className="property__contact">
-                    <FacebookButton url={url} appId={334455380307165}>
-                        {" Share to on Facebook"}
-                    </FacebookButton>
-                    <button>Send Message to Listing Agent</button>
-                </div>
-            </div>
-            <div className="property__details">
-                <div className="property__row">
-                    <div className="property__items">
-                        <h3>Status:-</h3>
-                        <p>{data.state}</p>
-                    </div>
-                    <div className="property__items">
-                        <h3>Owner:-</h3>
-                        <p>{owner.firstName} {owner.lastName}</p>
-                    </div>
-                    <div className="property__items">
-                        <h3>Owner Contact:-</h3>     
-                        <p>{owner.email}</p>
-                    </div>
-                </div>
-                <div className="property__row">
-                    <div className="property__items">
-                        <h3>Address:-</h3>
-                        <p>{address.addressLine1}</p>
-                    </div>
-                    <div className="property__items">
-                        <h3>City:-</h3>
-                        <p>{address.city}</p>
-                    </div>
-                    <div className="property__items">
-                        <h3>State:-</h3>     
-                        <p>{address.state}</p>
-                    </div>
-                </div>
-                <div className="property__row">
-                    <div className="property__items">
-                        <h3>Price:-</h3>
-                        <p>$ {data.price}</p>
-                    </div>
-                    <div className="property__items">
-                        <h3>Bathrooms:-</h3>
-                        <p>{property.numberBaths}</p>
-                    </div>
-                    <div className="property__items">
-                        <h3>Bedrooms:-</h3>     
-                        <p>{property.numberBedrooms}</p>
-                    </div>
-                </div>
-                <div className="property__row">
-                    <div className="property__items">
-                        <h3>Property Type:-</h3>
-                        <p>{property.propertyType}</p>
-                    </div>
-                    <div className="property__items">
-                        <h3>Owner Type:-</h3>
-                        <p>{property.ownerType}</p>
-                    </div>
-                    <div className="property__items">
-                        <h3>Size:-</h3>     
-                        <p>{property.squareFeet}</p>
-                    </div>
-                </div>
-                <div className="property__row">
-                    <div className="property__items">
-                        <h3>Included Items:-</h3>
-                        <p>{includedItems ? includedItems.name : null}</p>
-                    </div>
-                    <div className="property__items">
-                        <h3>Listing Agent:-</h3>
-                        <p>{listingAgent.firstName}</p>
-                    </div>
-                    <div className="property__items">
-                        <h3>Conatact Listing Agent:-</h3>     
-                        <p>{listingAgent.email}</p>
-                    </div>
-                </div>
-                <div className="property__row">
-                    <div className="property__items">
-                        <h3>Title Company:-</h3>
-                        <p>{titleCompany.name}</p>
-                    </div>
-                    <div className="property__items">
-                        <h3>Officer Name:-</h3>
-                        <p>{titleCompany.officerName}</p>
-                    </div>
-                    <div className="property__items">
-                        <h3>Escrow Company:-</h3>     
-                        <p>{escrowCompany.name}</p>
-                    </div>
-                </div>
-            </div>
+        // <div className="property__detail">
+        //     {!user ? (
+        //         <Auth />
+        //     ) : (
+                    
+                        
+        //         )
+        // </div>
+
+        <div className="property__details">
+            { !user ? (
+                <Auth />
+            ) : (
+                    <div className="property">
+                        <div className="propety__image">
+                            <img
+                                src={property.primaryImageUrl}
+                                alt=""
+                            />
+                            <div className="property__contact">
+                                <FacebookButton url={url} appId={334455380307165}>
+                                    {" Share on Facebook "}
+                                </FacebookButton>
+                                <button>Send Message to Listing Agent</button>
+                            </div>
+                        </div>
+                        <div className="property__details">
+                            <div className="property__row">
+                                <div className="property__items">
+                                    <h3>Status:-</h3>
+                                    <p>{data.state}</p>
+                                </div>
+                                <div className="property__items">
+                                    <h3>Owner:-</h3>
+                                    <p>{owner.firstName} {owner.lastName}</p>
+                                </div>
+                                <div className="property__items">
+                                    <h3>Owner Contact:-</h3>     
+                                    <p>{owner.email}</p>
+                                </div>
+                            </div>
+                            <div className="property__row">
+                                <div className="property__items">
+                                    <h3>Address:-</h3>
+                                    <p>{address.addressLine1}</p>
+                                </div>
+                                <div className="property__items">
+                                    <h3>City:-</h3>
+                                    <p>{address.city}</p>
+                                </div>
+                                <div className="property__items">
+                                    <h3>State:-</h3>     
+                                    <p>{address.state}</p>
+                                </div>
+                            </div>
+                            <div className="property__row">
+                                <div className="property__items">
+                                    <h3>Price:-</h3>
+                                    <p>$ {data.price}</p>
+                                </div>
+                                <div className="property__items">
+                                    <h3>Bathrooms:-</h3>
+                                    <p>{property.numberBaths}</p>
+                                </div>
+                                <div className="property__items">
+                                    <h3>Bedrooms:-</h3>     
+                                    <p>{property.numberBedrooms}</p>
+                                </div>
+                            </div>
+                            <div className="property__row">
+                                <div className="property__items">
+                                    <h3>Property Type:-</h3>
+                                    <p>{property.propertyType}</p>
+                                </div>
+                                <div className="property__items">
+                                    <h3>Owner Type:-</h3>
+                                    <p>{property.ownerType}</p>
+                                </div>
+                                <div className="property__items">
+                                    <h3>Size:-</h3>     
+                                    <p>{property.squareFeet}</p>
+                                </div>
+                            </div>
+                            <div className="property__row">
+                                <div className="property__items">
+                                    <h3>Included Items:-</h3>
+                                    <p>{includedItems ? includedItems.name : null}</p>
+                                </div>
+                                <div className="property__items">
+                                    <h3>Listing Agent:-</h3>
+                                    <p>{listingAgent.firstName}</p>
+                                </div>
+                                <div className="property__items">
+                                    <h3>Conatact Listing Agent:-</h3>     
+                                    <p>{listingAgent.email}</p>
+                                </div>
+                            </div>
+                            <div className="property__row">
+                                <div className="property__items">
+                                    <h3>Title Company:-</h3>
+                                    <p>{titleCompany.name}</p>
+                                </div>
+                                <div className="property__items">
+                                    <h3>Officer Name:-</h3>
+                                    <p>{titleCompany.officerName}</p>
+                                </div>
+                                <div className="property__items">
+                                    <h3>Escrow Company:-</h3>     
+                                    <p>{escrowCompany.name}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+            )
+        }
         </div>
     )
 }
 
-export default Property
+export default Property;

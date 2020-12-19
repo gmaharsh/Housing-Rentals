@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import './Message.css';
 import { useHistory } from 'react-router-dom';
@@ -35,7 +35,7 @@ function Message({ emailid }) {
                     <input
                         type="textarea"
                         name="email__user"
-                        placeholder="Please enter your e-mail id"
+                        placeholder="Please enter your e-mail"
                         // onChange= {e => setPassword(e.target.value)}
                     />
                     <h5>Best Time to Contact You</h5>

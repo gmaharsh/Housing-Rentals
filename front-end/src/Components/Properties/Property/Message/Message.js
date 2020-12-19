@@ -31,7 +31,20 @@ function Message({ emailid }) {
                         type="text"
                         name = "name" 
                     />
-
+                    <h5>Your E-mail Id</h5>
+                    <input
+                        type="textarea"
+                        name="email__user"
+                        placeholder="Please enter your e-mail id"
+                        // onChange= {e => setPassword(e.target.value)}
+                    />
+                    <h5>Best Time to Contact You</h5>
+                    <input
+                        type="textarea"
+                        name="time"
+                        placeholder="Enter Few Available Times"
+                        // onChange= {e => setPassword(e.target.value)}
+                    />
                     <h5>Message</h5>
                     <input
                         type="textarea"

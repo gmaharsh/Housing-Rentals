@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import Properties from './Components/Properties/Properties';
 import Property from './Components/Properties/Property/Property';
 import Auth from './Auth';
+import Message from './Components/Properties/Property/Message/Message';
 
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
           <Router>
             <Header />
           <Switch>
+              <Route path="/message">
+                <Message />
+              </Route>
               <Route path="/login">
                 <Auth />
               </Route>

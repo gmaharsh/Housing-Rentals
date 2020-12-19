@@ -20,13 +20,13 @@ function Header() {
                     />
                 </div>
             </Link>
-            <Link to="/property">
+            {/* <Link to="/property"> */}
                 <div className="header__services">
                     <h3>Buy</h3>
                     <h3>Rent</h3>
                     <h3>Mortgage</h3>
                 </div>
-            </Link>
+            {/* </Link> */}
             <div className="header__options">
                 <h4>Post a Property</h4>
                 <Link to="/login">

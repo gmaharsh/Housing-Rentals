@@ -49,7 +49,7 @@ function Properties() {
             filter();
         }
         if (event.target.name == "location") {
-            console.log("Location if>>>", event.target.value)
+            // console.log("Location if>>>", event.target.value)
             setLocation(event.target.value);
             filter();
         }
@@ -57,6 +57,7 @@ function Properties() {
   
     }
     const filter = () => {
+        console.log("I am called Filter")
         let listings = dataCopy
         let filtered = [];
 
@@ -74,6 +75,8 @@ function Properties() {
         }
 
         setData(filtered);
+        
+        console.log("Data is changed")
     }
     
     return (
@@ -111,6 +114,7 @@ function Properties() {
                         </form>
                     </div>
                     <div className="properties__suggestions">
+                        
                         {data.map((d) => {
                             return (<PropertyCard
                                 id={d.id}
@@ -135,52 +139,3 @@ function Properties() {
 }
 
 export default Properties;
-
-{/* 
-<div className="properties__title">
-                <h3>Find the properties which suits you the best:- </h3>
-            </div>
-            <div className="properties__filter">
-                <form className="properties__filter">
-                    <h4>Filter:-</h4>
-                    <div className="properties__filter_bedrooms">
-                        <select name="bedrooms" onChange={handleChange} value={bedrooms}>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div className="properties__filter_location">
-                        <input
-                            name="location"
-                            type="text"
-                            onChange={(event) => handleChange(event)}
-                            value={location}
-                            placeholder="Enter City" />
-                            
-                    </div>
-                    <div className="properties__filter_submit">
-                        
-                    </div>
-                </form>
-            </div>
-            <>
-            <div className="properties__suggestions">
-                {data.map((d) => {
-                    return (<PropertyCard
-                        id={d.id}
-                        title={d.property.description}
-                        image={d.property.primaryImageUrl}
-                        address1={d.property.address.addressLine1}
-                        city={d.property.address.city}
-                        state={d.property.state}
-                        price={d.price}
-                        bedrooms={d.property.numberBaths}
-                        baths={d.property.numberBaths}
-                        propertyType={d.property.propertyType}
-                    />)
-                })}
-            </div>
-            </>
-        </div> */}

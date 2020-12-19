@@ -41,6 +41,10 @@
     margin: 20px 0;
 }
 
+.card__address > h3{
+    margin-top: 20px;
+}
+
 button{
     margin-top: 10px;
     background-color: #3273ab;

@@ -1,10 +1,10 @@
-.auth{
+.message{
     background-color: white;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url('');
+
 }
 
 .login__logo{
@@ -16,7 +16,7 @@
     margin-left: auto;
 }
 
-.login__container{
+.message__form{
     width: 300px;
     height: fit-content;
     display: flex;
@@ -26,23 +26,25 @@
     padding: 20px;
 }
 
-.login__container > h1{
+.message__form > h2{
+    text-align: center;
     font-weight: 500;
     margin-bottom: 20px;
 }
 
-.login__container > form > h5{
+.message__form > form > h5{
     margin-bottom: 5px;
 }
 
-.login__container > form > input{
+.message__form > form > input{
+    width: 100;
     height: 30px;
     margin-bottom: 10px;
     background-color: white;
     width: 98%;
 }
 
-.login__container > p{
+.message__form > p{
     margin-top: 15px;
     font-size: 12px;
 }
@@ -55,13 +57,4 @@
     border: 1px solid;
     margin-top: 10px;
     border-color: #a88734 #9c7e31 #846a29;
-}
-
-.login__registerButton{
-    border-radius: 2px;
-    width: 100%;
-    height: 40px;
-    border: 1px solid;
-    margin-top: 10px;
-    border-color: darkgray;
 }

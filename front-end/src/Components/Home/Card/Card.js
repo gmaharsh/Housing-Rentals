@@ -35,8 +35,8 @@ function Card({ title, price, description, button, emailId, city, address, state
             }
 
             {address && (
-                    <div className="card__description">
-                        <p>{address}</p>
+                    <div className="card__address">
+                        <h3>{address}</h3>
                     </div>
                 )
             }

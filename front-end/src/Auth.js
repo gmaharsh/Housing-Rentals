@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import './Auth.css';
-
 import { Link, useHistory } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
 import { actionTypes } from './reducer';
 import { auth, provider } from './firebase';
-import { GoogleLoginButton } from "react-social-login-buttons";
 
 
 
 function Auth() {
+
+    const [{ user }, dispatch] = useStateValue("");
     const history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const [{ }, dispatch] = useStateValue();
+    // const [{ }, dispatch] = useStateValue();
     
-    
+    console.log(user)
     const registerUsinggmail = e => {
         e.preventDefault();
 
@@ -53,7 +53,7 @@ function Auth() {
                 //successfully created new user
                 console.log(auth);
                 if (auth) {
-                    history.push('/');
+                    history.push('/property');
                 }
             })
             .catch(error => {

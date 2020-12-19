@@ -6,6 +6,9 @@ import MailIcon from '@material-ui/icons/Mail';
 import { FacebookButton, FacebookCount, EmailButton } from "react-social";
 import { useStateValue } from '../../../StateProvider';
 import Auth from '../../../Auth';
+import emailjs from 'emailjs-com';
+import { Link } from 'react-router-dom';
+import { Button } from '@material-ui/core';
 
 function Property() {
 
@@ -25,7 +28,7 @@ function Property() {
     const [owner, setOwner] = useState("");
     const [address, setAddress] = useState("");
 
-    // console.log(includedItems)
+    console.log(user)
     
     const getData = (id) => {
         fetch('./../homes.json'
@@ -58,6 +61,7 @@ function Property() {
     }, [id]);
 
 
+
     return (
         // <div className="property__detail">
         //     {!user ? (
@@ -82,7 +86,11 @@ function Property() {
                                 <FacebookButton url={url} appId={334455380307165}>
                                     {" Share on Facebook "}
                                 </FacebookButton>
-                                <button>Send Message to Listing Agent</button>
+                                <div className="send__message">
+                                    <Link to= "/message" >
+                                        <button>Send Message to Listing Agent</button>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                         <div className="property__details">

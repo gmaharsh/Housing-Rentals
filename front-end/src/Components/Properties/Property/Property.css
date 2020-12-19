@@ -23,10 +23,15 @@
     margin-left: 20px;
 }
 
-.propery__share{
+.property__contact{
+    display: flex;
     text-align: center;
     margin: 20px auto;
     align-items: center;
+}
+
+.send__message{
+    margin-left: 20px;
 }
 
 .property__details{

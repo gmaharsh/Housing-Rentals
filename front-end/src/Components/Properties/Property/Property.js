@@ -3,9 +3,12 @@ import { useLocation, useParams } from 'react-router-dom';
 import './Property.css';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import MailIcon from '@material-ui/icons/Mail';
-import { FacebookShareButton, EmailShareButton } from 'react-share';
+import { FacebookButton, FacebookCount } from "react-social";
 
 function Property() {
+
+    let url = "https://housing-rentals.web.app/property";
+
     let location = useLocation();
     const urlLocation = location.pathname.split('/detailProperty/');
     const id = (urlLocation[1] - 1);
@@ -61,13 +64,10 @@ function Property() {
                     alt=""
                 />
                 <div className="property__contact">
-                    <button>Send Message to Seller</button>
+                    <FacebookButton url={url} appId={334455380307165}>
+                        {" Share to on Facebook"}
+                    </FacebookButton>
                     <button>Send Message to Listing Agent</button>
-                </div>
-                <div className="propery__share">
-                    <h3>Share Property With Your Friends:-</h3>
-                    <FacebookIcon fontSize="large" />
-                    <MailIcon fontSize="large" />
                 </div>
             </div>
             <div className="property__details">

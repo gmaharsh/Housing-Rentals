@@ -3,6 +3,7 @@ import './Header.css';
 import Avatar from '@material-ui/core/Avatar';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../../StateProvider';
+import logo from './../../logo.png'
 
 
 function Header() {
@@ -15,7 +16,7 @@ function Header() {
             <Link to="/">
                 <div className="header__logo">
                     <img
-                        src="http://uploads.webflow.com/57c6315d5410317a109bcf7b/57c6357c23bf505b1929160d_Offer1-color-logo.png"
+                        src={logo}
                         alt=""
                     />
                 </div>

@@ -3,7 +3,6 @@ import './PropertyCard.css';
 import HotelIcon from '@material-ui/icons/Hotel';
 import BathtubIcon from '@material-ui/icons/Bathtub';
 import { Link } from 'react-router-dom';
-import Property from '../Property/Property';
 
 
 function PropertyCard({ id, image, address1, city, state, price, baths, bedrooms, propertyType, title }) {

@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
-import SearchIcon from '@material-ui/icons/SearchOutlined';
 import About from './About/About';
 import Card from './Card/Card';
-import { Carousel } from 'react-responsive-carousel';
 import { useStateValue } from '../../StateProvider';
 
 

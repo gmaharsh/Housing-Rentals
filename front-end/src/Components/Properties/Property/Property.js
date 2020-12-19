@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import './Property.css';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import MailIcon from '@material-ui/icons/Mail';
-import { FacebookButton, FacebookCount, EmailButton } from "react-social";
+import { FacebookButton } from "react-social";
 import { useStateValue } from '../../../StateProvider';
 import Auth from '../../../Auth';
-import emailjs from 'emailjs-com';
 import { Link } from 'react-router-dom';
-import { Button } from '@material-ui/core';
+
 
 function Property() {
 

@@ -8,13 +8,29 @@
     text-align: justify;
     align-items: center;
     box-shadow: 0px 6px 18px -9px rgba(42, 137, 192, 0.75);
+    background-color: white;
 }
+
 
 .Card:hover{
     transform: scale(1.03);
 }
 
+.card__image{
+    display: flex;
+    align-items: center;
+    
+}
+
+.card__image > img{
+    max-width: 30vh;
+    max-height: 150px;
+    border: none;
+    border-radius: 10px;
+}
+
 .card__title > h1{
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -27,11 +43,12 @@
 
 button{
     margin-top: 10px;
-    background-color: #3fc1c9;
+    background-color: #3273ab;
     padding: 20px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
+    color: white;
 }
 
 button:focus{

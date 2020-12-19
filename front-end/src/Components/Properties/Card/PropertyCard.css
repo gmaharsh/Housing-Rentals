@@ -1,0 +1,70 @@
+.propertyCard{
+    display: flex;
+    flex-direction:  column;
+    margin: 20px 10px;
+}
+
+.property{
+    display: flex;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 6px 18px -9px rgba(42, 137, 192, 0.75);
+    border: none;
+}
+
+.property__image > img{
+    width: 30vh;
+    height: 20vh;
+    border: none;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.property__details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: none;
+}
+
+.property > .property__details{
+    box-shadow: none;
+}
+
+.property__title{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.property__address{
+    margin-bottom: 20px;
+    
+}
+
+.property__orientations{
+    display: flex;
+    margin-bottom: 10px;
+    padding-right: 20px;
+}
+
+.property__orientations > p{
+    margin-right: 20px;
+}
+
+.property__type{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.property__price{
+    display: flex;
+}
+
+.property__price>h5{
+    flex: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+}

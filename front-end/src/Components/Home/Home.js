@@ -1,11 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css';
 import SearchIcon from '@material-ui/icons/SearchOutlined';
 import About from './About/About';
 import Card from './Card/Card';
 import { Carousel } from 'react-responsive-carousel';
+import { useStateValue } from '../../StateProvider';
+
 
 function Home() {
+
+    const [data, setData] = useState([]);
+    const [{ user }, dispatch] = useStateValue();
+
+    console.log(user)
+
+    const getData=()=>{
+        fetch('homes.json'
+        ,{
+        headers : { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+        }
+        )
+        .then(function(response){
+            
+            return response.json();
+        })
+        .then(function(myJson) {
+            
+            setData(myJson)
+        });
+    }
+    useEffect(()=>{
+        getData()
+    },[])
+
+    
+
     return (
         <div className="home">
             <div className="home__banner">
@@ -31,39 +63,26 @@ function Home() {
                     <h3>Look at some of our properties</h3>
                 </div>
                 <div className="home__suggestionCards">
-                    <Card
-                        housetitle="Mortgage"
-                        image=""
-                        price=""
-                    />
-                    <Card
-                        housetitle="Mortgage"
-                        image=""
-                        price=""
-                    />
-                    <Card
-                        housetitle="Mortgage"
-                        image=""
-                        price=""
-                    />
+                    {data.map((d) => (
+                        <Card
+                            image={d.property.primaryImageUrl}
+                            address={d.property.address.addressLine1}
+                            city={d.property.address.city}
+                            state={d.property.state}
+                            button={true}
+                        />
+                    ))}
                 </div>
             </div>
-            <div className="home__testimonials">
-                <div className="home__testimonialsTitle">
-                    <h3>Testimonials</h3>
-                </div>
-                <div className="home__testimonialsPeople">
-                   
-                </div>
-            </div>
+            
             <div className="home__contact">
                 <div className="home__ContactTitle">
-                    <h3>Want to meet us?</h3>
+                    <h3>Contact Us</h3>
                 </div>
                 <div className="home__ContactInfo">
                     <Card
                         emailId="steve@offer1.com"
-                        contactNumber={312 - 999 - 9999}
+                        contactNumber="+1 (312)-937-4488"
                         address="9th Ave San Diego, CA 92101"
                         button={false}
                     />

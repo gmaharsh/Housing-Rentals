@@ -24,7 +24,7 @@
     top: 45%;
     left: 50%;
     transform: translate( -50%, -50% );
-    /* text-align: center; */
+    align-items: center;
     height: 4vh;
     min-width: 200px;
     /* border: 1px solid; */
@@ -36,14 +36,13 @@
 
 .home__searchInput > input{
     cursor: pointer;
-   min-width: 400px;
-   height: 4vh;
+    min-width: 400px;
+    height: 4vh;
     border-radius: 10px;
     background: transparent;
     /* padding: ; */
     border: none;
     font-size: 20px;
-    margin-right: 10px;
     color: white;
 }
 .home__searchInput>input:focus{
@@ -66,7 +65,7 @@
 
 .home__suggestion{
     margin-top: 30px;
-    background-color: mediumturquoise;
+    background-color: #3273ab;
 }
 
 .home__suggestionTitle{
@@ -77,7 +76,7 @@
 .home__suggestionTitle > h3{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 30px;
-    color :rgb(59, 65, 68);
+    color :black;
     margin: 20px 0;
 }
 

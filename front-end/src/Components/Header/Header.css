@@ -3,6 +3,7 @@
     padding: 20px;
     justify-content: space-between;
     z-index: 1;
+    box-shadow: 1px 1px #eeeeee;
 }
 
 .header__logo{
